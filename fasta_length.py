@@ -11,6 +11,8 @@ import sys
 sequence_length = 0
 fasta_sequence_lengths = []
 
+
+
 # Getting the filename from the list of arguments
 fasta_filename = sys.argv[1]
 
@@ -30,4 +32,12 @@ fasta_sequence_lengths.append(sequence_length)
 # Closing the file:
 fastafile.close()
 
-print(sorted(fasta_sequence_lengths))
+def print_stats(sequence_list):
+    """ 
+    function which prints the sorted sequence length as well as
+    the maximum and minimum sequence length
+    """
+    print(sorted(sequence_list))
+    print("The max is {} and the min is {}.".format(max(sequence_list), min(sequence_list)))
+
+print_stats(fasta_sequence_lengths)
